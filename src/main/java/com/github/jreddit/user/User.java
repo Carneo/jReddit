@@ -283,7 +283,7 @@ public class User extends Thing {
 
         try {
             JSONObject object = (JSONObject) restClient.get(String.format(ApiEndpointUtils.USER_COMMENTS,
-                    username, commentSort.getValue()), null);
+                    username, commentSort.getValue()), null).getResponseObject();
 
             if (object != null) {
                 JSONObject data = (JSONObject) object.get("data");
